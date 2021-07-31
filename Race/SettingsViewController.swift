@@ -13,13 +13,6 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Settings"
-        redButton.setTitleColor(.lightGray, for: .selected)
-        redButton.setTitleColor(.red, for: .normal)
-        blackButton.setTitleColor(.lightGray, for: .selected)
-        blackButton.setTitleColor(.black, for: .normal)
-        yellowButton.setTitleColor(.lightGray, for: .selected)
-        yellowButton.setTitleColor(.yellow, for: .normal)
-        let choosedCarColor = userDefaults.value(forKey: "car color") as? String ?? "red"
         
         if userDefaults.value(forKey: "driver name") == nil {
             driverNameTextField.text = ""
@@ -27,7 +20,34 @@ class SettingsViewController: UIViewController {
             driverNameTextField.text = userDefaults.value(forKey: "driver name") as? String ?? ""
         }
         
-        switch choosedCarColor {
+        redButton.setTitleColor(.lightGray, for: .selected)
+        redButton.setTitleColor(.red, for: .normal)
+        blackButton.setTitleColor(.lightGray, for: .selected)
+        blackButton.setTitleColor(.black, for: .normal)
+        yellowButton.setTitleColor(.lightGray, for: .selected)
+        yellowButton.setTitleColor(.yellow, for: .normal)
+        
+        let choosedCarColor = userDefaults.value(forKey: "car color") as? String ?? "red"
+        selectCarColor(color: choosedCarColor)
+    }
+    
+    @IBAction func redButtonPressed(_ sender: Any) {
+        selectCarColor(color: "red")
+    }
+    
+    @IBAction func yellowButtonPressed(_ sender: Any) {
+        selectCarColor(color: "yellow")
+    }
+    
+    @IBAction func blackButtonPressed(_ sender: Any) {
+        selectCarColor(color: "black")    }
+    
+    @IBAction func driverNameEntered(_ sender: Any) {
+        userDefaults.setValue(driverNameTextField.text, forKey: "driver name")
+    }
+    
+    func selectCarColor(color: String) {
+        switch color {
         case "red":
             redButton.isSelected  = true
             blackButton.isSelected  = false
@@ -57,45 +77,6 @@ class SettingsViewController: UIViewController {
             blackButton.backgroundColor = .clear
             yellowButton.backgroundColor = .clear
         }
-    }
-    
-    @IBAction func redButtonPressed(_ sender: Any) {
-        redButton.isSelected = true
-        if redButton.isSelected {
-            redButton.backgroundColor = .red
-            blackButton.backgroundColor = .clear
-            blackButton.isSelected = false
-            yellowButton.backgroundColor = .clear
-            yellowButton.isSelected = false
-            userDefaults.setValue("red", forKey: "car color")
-        }
-    }
-    
-    @IBAction func yellowButtonPressed(_ sender: Any) {
-        yellowButton.isSelected = true
-        if yellowButton.isSelected {
-            yellowButton.backgroundColor = .yellow
-            redButton.backgroundColor = .clear
-            redButton.isSelected = false
-            blackButton.backgroundColor = .clear
-            blackButton.isSelected = false
-            userDefaults.setValue("yellow", forKey: "car color")
-        }
-    }
-    
-    @IBAction func blackButtonPressed(_ sender: Any) {
-        blackButton.isSelected = true
-        if blackButton.isSelected {
-            blackButton.backgroundColor = .black
-            redButton.backgroundColor = .clear
-            redButton.isSelected = false
-            yellowButton.backgroundColor = .clear
-            yellowButton.isSelected = false
-            userDefaults.setValue("black", forKey: "car color")
-        }
-    }
-    
-    @IBAction func driverNameEntered(_ sender: Any) {
-        userDefaults.setValue(driverNameTextField.text, forKey: "driver name")
+        userDefaults.setValue(color, forKey: "car color")
     }
 }
