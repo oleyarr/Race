@@ -20,6 +20,7 @@
 		189824BE266F1E3F00200515 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189824BD266F1E3F00200515 /* GameSettings.swift */; };
 		18EAD669265F5FB600ABE5BC /* Oliandre-DEMO.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18EAD668265F5FB600ABE5BC /* Oliandre-DEMO.otf */; };
 		18EAD66B265F65A100ABE5BC /* UIFonts+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAD66A265F65A100ABE5BC /* UIFonts+CustomFonts.swift */; };
+		6435C0899DA362985340D2D5 /* Pods_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0CE04F39C6FD4AC85811627 /* Pods_Race.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		189824BD266F1E3F00200515 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 		18EAD668265F5FB600ABE5BC /* Oliandre-DEMO.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oliandre-DEMO.otf"; sourceTree = "<group>"; };
 		18EAD66A265F65A100ABE5BC /* UIFonts+CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFonts+CustomFonts.swift"; sourceTree = "<group>"; };
+		56F156BBD1ED53447FF01D4E /* Pods-Race.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Race.release.xcconfig"; path = "Target Support Files/Pods-Race/Pods-Race.release.xcconfig"; sourceTree = "<group>"; };
+		697B49F9F01E6EE70AA98359 /* Pods-Race.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Race.debug.xcconfig"; path = "Target Support Files/Pods-Race/Pods-Race.debug.xcconfig"; sourceTree = "<group>"; };
+		C0CE04F39C6FD4AC85811627 /* Pods_Race.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Race.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6435C0899DA362985340D2D5 /* Pods_Race.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				188BCE672642A51900B1E488 /* Race */,
 				188BCE662642A51900B1E488 /* Products */,
+				4681B5E52CF621D4AF37487E /* Pods */,
+				F1523C5B1BCE95D8A4596286 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,13 +80,13 @@
 				18EAD667265F5F9700ABE5BC /* Fonts */,
 				188BCE682642A51900B1E488 /* AppDelegate.swift */,
 				188BCE6A2642A51900B1E488 /* SceneDelegate.swift */,
-				189824BD266F1E3F00200515 /* GameSettings.swift */,
 				18EAD66A265F65A100ABE5BC /* UIFonts+CustomFonts.swift */,
+				189824BD266F1E3F00200515 /* GameSettings.swift */,
 				188BCE6C2642A51900B1E488 /* ViewController.swift */,
 				188BCE7D2642C60A00B1E488 /* SettingsViewController.swift */,
 				188BCE802642C61900B1E488 /* ScoresViewController.swift */,
-				188BCE862642CE6D00B1E488 /* ViewControllerFactory.swift */,
 				188BCE832642C92000B1E488 /* GameViewController.swift */,
+				188BCE862642CE6D00B1E488 /* ViewControllerFactory.swift */,
 				188BCE6E2642A51900B1E488 /* Main.storyboard */,
 				188BCE712642A51D00B1E488 /* Assets.xcassets */,
 				188BCE732642A51D00B1E488 /* LaunchScreen.storyboard */,
@@ -96,6 +103,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		4681B5E52CF621D4AF37487E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				697B49F9F01E6EE70AA98359 /* Pods-Race.debug.xcconfig */,
+				56F156BBD1ED53447FF01D4E /* Pods-Race.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F1523C5B1BCE95D8A4596286 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0CE04F39C6FD4AC85811627 /* Pods_Race.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,6 +127,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 188BCE792642A51D00B1E488 /* Build configuration list for PBXNativeTarget "Race" */;
 			buildPhases = (
+				D8F4328CCCEE7124E3F4546F /* [CP] Check Pods Manifest.lock */,
+				1859EC5626B9608100B6A061 /* SwiftLint */,
 				188BCE612642A51900B1E488 /* Sources */,
 				188BCE622642A51900B1E488 /* Frameworks */,
 				188BCE632642A51900B1E488 /* Resources */,
@@ -161,6 +187,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1859EC5626B9608100B6A061 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		D8F4328CCCEE7124E3F4546F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Race-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		188BCE612642A51900B1E488 /* Sources */ = {
@@ -319,6 +388,7 @@
 		};
 		188BCE7A2642A51D00B1E488 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 697B49F9F01E6EE70AA98359 /* Pods-Race.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -338,6 +408,7 @@
 		};
 		188BCE7B2642A51D00B1E488 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56F156BBD1ED53447FF01D4E /* Pods-Race.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -7,7 +7,7 @@
 import Foundation
 
 class GameSettings: Codable {
-    var time = Date()
+    var time: Date = Date()
     var driverName: String = ""
     var carColor: String = ""
     var scores: Int = 0

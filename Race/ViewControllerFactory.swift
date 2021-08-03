@@ -12,19 +12,19 @@ class ViewControllerFactory {
     private init () {}
     
     func createViewController() -> ViewController {
-        return storyboard.instantiateViewController(identifier: "ViewController") //as ViewController
+        return storyboard.instantiateViewController(identifier: "ViewController") as ViewController
     }
     
     func createGameViewController() -> GameViewController {
-        return storyboard.instantiateViewController(identifier: "GameViewController") //as GameViewController
+        return storyboard.instantiateViewController(identifier: "GameViewController") as GameViewController
     }
     
     func createSettingsViewController() -> SettingsViewController {
-        return storyboard.instantiateViewController(identifier: "SettingsViewController") //as SettingsViewController
+        return storyboard.instantiateViewController(identifier: "SettingsViewController") as SettingsViewController
     }
 
     func createScoresViewController() -> ScoresViewController {
-         return storyboard.instantiateViewController(identifier: "ScoresViewController") //as ScoresViewController
+         return storyboard.instantiateViewController(identifier: "ScoresViewController") as ScoresViewController
     }
     
 }

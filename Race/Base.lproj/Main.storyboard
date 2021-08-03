@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lesson21_DZ_Race" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Race" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
         <!--Settings View Controller-->
         <scene sceneID="eUH-8V-5l8">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="zF2-Ii-13L" customClass="SettingsViewController" customModule="Lesson21_DZ_Race" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="zF2-Ii-13L" customClass="SettingsViewController" customModule="Race" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AsI-gQ-Qdp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,7 +227,7 @@
         <!--Scores View Controller-->
         <scene sceneID="KdA-R7-3kC">
             <objects>
-                <viewController storyboardIdentifier="ScoresViewController" id="dTK-I5-Mxx" customClass="ScoresViewController" customModule="Lesson21_DZ_Race" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScoresViewController" id="dTK-I5-Mxx" customClass="ScoresViewController" customModule="Race" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SgF-ko-0Ox">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,12 +235,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrJ-MT-5cf">
                                 <rect key="frame" x="20" y="64" width="374" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cU-Ef-VTo">
-                                <rect key="frame" x="20" y="108" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -263,15 +257,11 @@
                         <viewLayoutGuide key="safeArea" id="szv-W4-cDd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="szv-W4-cDd" firstAttribute="bottom" secondItem="UNL-7E-dEt" secondAttribute="bottom" constant="400" id="B29-Oi-GIf"/>
+                            <constraint firstItem="hrJ-MT-5cf" firstAttribute="bottom" secondItem="UNL-7E-dEt" secondAttribute="bottom" constant="-374" id="B29-Oi-GIf"/>
                             <constraint firstItem="szv-W4-cDd" firstAttribute="bottom" secondItem="HYT-py-FVl" secondAttribute="bottom" constant="20" id="EdA-QW-V7M"/>
-                            <constraint firstItem="UNL-7E-dEt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1cU-Ef-VTo" secondAttribute="bottom" constant="20" id="H1C-xG-myS"/>
                             <constraint firstItem="szv-W4-cDd" firstAttribute="trailing" secondItem="UNL-7E-dEt" secondAttribute="trailing" constant="20" id="KnR-ec-waZ"/>
                             <constraint firstItem="szv-W4-cDd" firstAttribute="trailing" secondItem="HYT-py-FVl" secondAttribute="trailing" constant="20" id="OWa-3h-xCq"/>
-                            <constraint firstItem="1cU-Ef-VTo" firstAttribute="leading" secondItem="szv-W4-cDd" secondAttribute="leading" constant="20" id="OkN-Vm-qYf"/>
-                            <constraint firstItem="szv-W4-cDd" firstAttribute="trailing" secondItem="1cU-Ef-VTo" secondAttribute="trailing" constant="20" id="Ry8-ah-U9J"/>
                             <constraint firstItem="hrJ-MT-5cf" firstAttribute="top" secondItem="szv-W4-cDd" secondAttribute="top" constant="20" id="VAW-dc-6f7"/>
-                            <constraint firstItem="1cU-Ef-VTo" firstAttribute="top" secondItem="hrJ-MT-5cf" secondAttribute="bottom" constant="20" id="W1X-Gb-l8z"/>
                             <constraint firstItem="hrJ-MT-5cf" firstAttribute="leading" secondItem="szv-W4-cDd" secondAttribute="leading" constant="20" id="WdF-dW-2KT"/>
                             <constraint firstItem="HYT-py-FVl" firstAttribute="leading" secondItem="szv-W4-cDd" secondAttribute="leading" constant="20" id="i1s-CB-p9E"/>
                             <constraint firstItem="HYT-py-FVl" firstAttribute="top" secondItem="UNL-7E-dEt" secondAttribute="bottom" constant="20" id="jWK-Ps-Wfj"/>
@@ -280,7 +270,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="listOfScoresLabel" destination="1cU-Ef-VTo" id="GbN-Mf-wEO"/>
                         <outlet property="scoresTableView" destination="HYT-py-FVl" id="0aU-lJ-C9N"/>
                         <outlet property="totalScoresLabel" destination="hrJ-MT-5cf" id="IZU-ds-XPe"/>
                     </connections>
@@ -292,7 +281,7 @@
         <!--Game View Controller-->
         <scene sceneID="tB0-Zo-nQF">
             <objects>
-                <viewController storyboardIdentifier="GameViewController" id="HkE-Ba-esP" customClass="GameViewController" customModule="Lesson21_DZ_Race" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" id="HkE-Ba-esP" customClass="GameViewController" customModule="Race" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IfH-wH-D6q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
