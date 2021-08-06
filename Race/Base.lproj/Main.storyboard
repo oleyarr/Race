@@ -99,13 +99,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter driver's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DOK-1m-wdA">
+                                    <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter driver's name" textAlignment="natural" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DOK-1m-wdA">
                                         <rect key="frame" x="78" y="30" width="278" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="name"/>
-                                        <connections>
-                                            <action selector="driverNameEntered:" destination="zF2-Ii-13L" eventType="editingDidEnd" id="enW-m4-65W"/>
-                                        </connections>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" smartDashesType="no" textContentType="name"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -213,10 +210,8 @@
                     </view>
                     <connections>
                         <outlet property="blackButton" destination="aNs-S8-lfZ" id="OFx-Gx-eS3"/>
-                        <outlet property="chooseCarColorView" destination="Zfa-2w-ZH1" id="S0o-Fh-rM9"/>
                         <outlet property="driverNameTextField" destination="DOK-1m-wdA" id="99R-rv-qE1"/>
                         <outlet property="redButton" destination="arw-ZN-ajy" id="vrz-gz-3lc"/>
-                        <outlet property="totalScoresLabel" destination="hrJ-MT-5cf" id="5Om-cg-33O"/>
                         <outlet property="yellowButton" destination="bgt-2M-ohG" id="haK-pm-P7w"/>
                     </connections>
                 </viewController>
@@ -232,14 +227,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrJ-MT-5cf">
-                                <rect key="frame" x="20" y="64" width="374" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HYT-py-FVl">
+                                <rect key="frame" x="20" y="64" width="374" height="718"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNL-7E-dEt">
-                                <rect key="frame" x="20" y="422" width="374" height="40"/>
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3Ln-mX-WhS"/>
@@ -249,29 +242,21 @@
                                     <action selector="clearScoresButtonPressed:" destination="dTK-I5-Mxx" eventType="touchUpInside" id="a5k-pi-efg"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HYT-py-FVl">
-                                <rect key="frame" x="20" y="482" width="374" height="360"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="szv-W4-cDd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hrJ-MT-5cf" firstAttribute="bottom" secondItem="UNL-7E-dEt" secondAttribute="bottom" constant="-374" id="B29-Oi-GIf"/>
-                            <constraint firstItem="szv-W4-cDd" firstAttribute="bottom" secondItem="HYT-py-FVl" secondAttribute="bottom" constant="20" id="EdA-QW-V7M"/>
+                            <constraint firstItem="UNL-7E-dEt" firstAttribute="top" secondItem="HYT-py-FVl" secondAttribute="bottom" constant="20" id="EdA-QW-V7M"/>
                             <constraint firstItem="szv-W4-cDd" firstAttribute="trailing" secondItem="UNL-7E-dEt" secondAttribute="trailing" constant="20" id="KnR-ec-waZ"/>
                             <constraint firstItem="szv-W4-cDd" firstAttribute="trailing" secondItem="HYT-py-FVl" secondAttribute="trailing" constant="20" id="OWa-3h-xCq"/>
-                            <constraint firstItem="hrJ-MT-5cf" firstAttribute="top" secondItem="szv-W4-cDd" secondAttribute="top" constant="20" id="VAW-dc-6f7"/>
-                            <constraint firstItem="hrJ-MT-5cf" firstAttribute="leading" secondItem="szv-W4-cDd" secondAttribute="leading" constant="20" id="WdF-dW-2KT"/>
+                            <constraint firstItem="szv-W4-cDd" firstAttribute="bottom" secondItem="UNL-7E-dEt" secondAttribute="bottom" constant="20" id="VOw-eb-mOS"/>
                             <constraint firstItem="HYT-py-FVl" firstAttribute="leading" secondItem="szv-W4-cDd" secondAttribute="leading" constant="20" id="i1s-CB-p9E"/>
-                            <constraint firstItem="HYT-py-FVl" firstAttribute="top" secondItem="UNL-7E-dEt" secondAttribute="bottom" constant="20" id="jWK-Ps-Wfj"/>
-                            <constraint firstItem="szv-W4-cDd" firstAttribute="trailing" secondItem="hrJ-MT-5cf" secondAttribute="trailing" constant="20" id="k0Z-22-CHg"/>
                             <constraint firstItem="UNL-7E-dEt" firstAttribute="leading" secondItem="szv-W4-cDd" secondAttribute="leading" constant="20" id="v1l-P4-EHQ"/>
+                            <constraint firstItem="HYT-py-FVl" firstAttribute="top" secondItem="szv-W4-cDd" secondAttribute="top" constant="20" id="yEZ-Oc-qtW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="scoresTableView" destination="HYT-py-FVl" id="0aU-lJ-C9N"/>
-                        <outlet property="totalScoresLabel" destination="hrJ-MT-5cf" id="IZU-ds-XPe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iIc-6z-C6Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
