@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     var isCrash = false
     var isGameOver = false
     var carAnimationDuration = TimeInterval(0.04)
-    var animateLaneStep: CGFloat = 13
+    var animateLaneStep: CGFloat = 12
     var laneTimer = Timer()
     var saveCarFrame = CGRect(x: 0, y: 0, width: 0, height: 0)
     var carsArray = [UIImage(named: "yellow_car"),
@@ -46,13 +46,13 @@ class GameViewController: UIViewController {
         let settingsViewController = SettingsViewController()
         carImageView.image = settingsViewController.restoreCarColorSettings()
 
-        laneTimer = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { (_) in
+        laneTimer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (_) in
             if !self.isGameOver {
                 self.movingLane()
             }
         }
 
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
             if !self.isGameOver {
                 self.generateOncomingCars()
             }

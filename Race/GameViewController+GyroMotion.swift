@@ -10,17 +10,17 @@ import UIKit
 extension GameViewController {
 
     func startGyroMotionManager() {
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear) {
+        UIView.animate(withDuration: 0.05, delay: 0, options: .curveLinear) {
         } completion: { (_) in
             if self.gyroMotionManager.isGyroAvailable {
-                self.gyroMotionManager.gyroUpdateInterval = 1 / 60
+                self.gyroMotionManager.gyroUpdateInterval = 1 / 120
                 self.gyroMotionManager.startGyroUpdates(to: .main) { (data, error) in
                     if let error = error {
                         print("error = ", error.localizedDescription)
                         return
                     }
                     if let gyroData = data {
-                        self.carImageView.frame.origin.x += (CGFloat(gyroData.rotationRate.y) * 2)
+                        self.carImageView.frame.origin.x += (CGFloat(gyroData.rotationRate.y) * 3)
                         self.carImageView.frame.origin.y +=  (CGFloat(gyroData.rotationRate.x ))
                     }
                     if self.carImageView.frame.intersects(self.greenViewRight.frame)
