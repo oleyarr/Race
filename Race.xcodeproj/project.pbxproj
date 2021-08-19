@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1802262826BA6459009A388A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1802262726BA6458009A388A /* GoogleService-Info.plist */; };
 		188BCE692642A51900B1E488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCE682642A51900B1E488 /* AppDelegate.swift */; };
 		188BCE6B2642A51900B1E488 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCE6A2642A51900B1E488 /* SceneDelegate.swift */; };
 		188BCE6D2642A51900B1E488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCE6C2642A51900B1E488 /* ViewController.swift */; };
@@ -17,12 +18,18 @@
 		188BCE812642C61900B1E488 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCE802642C61900B1E488 /* ScoresViewController.swift */; };
 		188BCE842642C92000B1E488 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCE832642C92000B1E488 /* GameViewController.swift */; };
 		188BCE872642CE6D00B1E488 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCE862642CE6D00B1E488 /* ViewControllerFactory.swift */; };
-		189824BE266F1E3F00200515 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189824BD266F1E3F00200515 /* GameSettings.swift */; };
+		18939E4E26BBD9C20025E11D /* GameViewController+SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18939E4D26BBD9C20025E11D /* GameViewController+SetupViews.swift */; };
+		18939E5026BBDB6B0025E11D /* GameViewController+GyroMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18939E4F26BBDB6B0025E11D /* GameViewController+GyroMotion.swift */; };
+		18939E5226BC10360025E11D /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18939E5126BC10360025E11D /* UserDefaultsKeys.swift */; };
+		18939E5426BC11520025E11D /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18939E5326BC11520025E11D /* UserDefaults+Keys.swift */; };
+		189824BE266F1E3F00200515 /* ScoresList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189824BD266F1E3F00200515 /* ScoresList.swift */; };
 		18EAD669265F5FB600ABE5BC /* Oliandre-DEMO.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18EAD668265F5FB600ABE5BC /* Oliandre-DEMO.otf */; };
 		18EAD66B265F65A100ABE5BC /* UIFonts+CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAD66A265F65A100ABE5BC /* UIFonts+CustomFonts.swift */; };
+		6435C0899DA362985340D2D5 /* Pods_Race.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0CE04F39C6FD4AC85811627 /* Pods_Race.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1802262726BA6458009A388A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		188BCE652642A51900B1E488 /* Race.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Race.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188BCE682642A51900B1E488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188BCE6A2642A51900B1E488 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,9 +42,16 @@
 		188BCE802642C61900B1E488 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		188BCE832642C92000B1E488 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		188BCE862642CE6D00B1E488 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		189824BD266F1E3F00200515 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
+		18939E4D26BBD9C20025E11D /* GameViewController+SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+SetupViews.swift"; sourceTree = "<group>"; };
+		18939E4F26BBDB6B0025E11D /* GameViewController+GyroMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameViewController+GyroMotion.swift"; sourceTree = "<group>"; };
+		18939E5126BC10360025E11D /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		18939E5326BC11520025E11D /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
+		189824BD266F1E3F00200515 /* ScoresList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresList.swift; sourceTree = "<group>"; };
 		18EAD668265F5FB600ABE5BC /* Oliandre-DEMO.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oliandre-DEMO.otf"; sourceTree = "<group>"; };
 		18EAD66A265F65A100ABE5BC /* UIFonts+CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFonts+CustomFonts.swift"; sourceTree = "<group>"; };
+		56F156BBD1ED53447FF01D4E /* Pods-Race.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Race.release.xcconfig"; path = "Target Support Files/Pods-Race/Pods-Race.release.xcconfig"; sourceTree = "<group>"; };
+		697B49F9F01E6EE70AA98359 /* Pods-Race.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Race.debug.xcconfig"; path = "Target Support Files/Pods-Race/Pods-Race.debug.xcconfig"; sourceTree = "<group>"; };
+		C0CE04F39C6FD4AC85811627 /* Pods_Race.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Race.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6435C0899DA362985340D2D5 /* Pods_Race.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +71,8 @@
 			children = (
 				188BCE672642A51900B1E488 /* Race */,
 				188BCE662642A51900B1E488 /* Products */,
+				4681B5E52CF621D4AF37487E /* Pods */,
+				F1523C5B1BCE95D8A4596286 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,16 +90,21 @@
 				18EAD667265F5F9700ABE5BC /* Fonts */,
 				188BCE682642A51900B1E488 /* AppDelegate.swift */,
 				188BCE6A2642A51900B1E488 /* SceneDelegate.swift */,
-				189824BD266F1E3F00200515 /* GameSettings.swift */,
 				18EAD66A265F65A100ABE5BC /* UIFonts+CustomFonts.swift */,
 				188BCE6C2642A51900B1E488 /* ViewController.swift */,
 				188BCE7D2642C60A00B1E488 /* SettingsViewController.swift */,
 				188BCE802642C61900B1E488 /* ScoresViewController.swift */,
-				188BCE862642CE6D00B1E488 /* ViewControllerFactory.swift */,
+				18939E5126BC10360025E11D /* UserDefaultsKeys.swift */,
+				18939E5326BC11520025E11D /* UserDefaults+Keys.swift */,
 				188BCE832642C92000B1E488 /* GameViewController.swift */,
+				18939E4D26BBD9C20025E11D /* GameViewController+SetupViews.swift */,
+				18939E4F26BBDB6B0025E11D /* GameViewController+GyroMotion.swift */,
+				188BCE862642CE6D00B1E488 /* ViewControllerFactory.swift */,
 				188BCE6E2642A51900B1E488 /* Main.storyboard */,
+				189824BD266F1E3F00200515 /* ScoresList.swift */,
 				188BCE712642A51D00B1E488 /* Assets.xcassets */,
 				188BCE732642A51D00B1E488 /* LaunchScreen.storyboard */,
+				1802262726BA6458009A388A /* GoogleService-Info.plist */,
 				188BCE762642A51D00B1E488 /* Info.plist */,
 			);
 			path = Race;
@@ -96,6 +118,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		4681B5E52CF621D4AF37487E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				697B49F9F01E6EE70AA98359 /* Pods-Race.debug.xcconfig */,
+				56F156BBD1ED53447FF01D4E /* Pods-Race.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F1523C5B1BCE95D8A4596286 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0CE04F39C6FD4AC85811627 /* Pods_Race.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +142,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 188BCE792642A51D00B1E488 /* Build configuration list for PBXNativeTarget "Race" */;
 			buildPhases = (
+				D8F4328CCCEE7124E3F4546F /* [CP] Check Pods Manifest.lock */,
+				1859EC5626B9608100B6A061 /* SwiftLint */,
 				188BCE612642A51900B1E488 /* Sources */,
 				188BCE622642A51900B1E488 /* Frameworks */,
 				188BCE632642A51900B1E488 /* Resources */,
+				62A818B335D83C78209406A0 /* [CP] Embed Pods Frameworks */,
+				1835BDC426BA46D80033E885 /* Crashlitics */,
 			);
 			buildRules = (
 			);
@@ -155,6 +198,7 @@
 			files = (
 				18EAD669265F5FB600ABE5BC /* Oliandre-DEMO.otf in Resources */,
 				188BCE752642A51D00B1E488 /* LaunchScreen.storyboard in Resources */,
+				1802262826BA6459009A388A /* GoogleService-Info.plist in Resources */,
 				188BCE722642A51D00B1E488 /* Assets.xcassets in Resources */,
 				188BCE702642A51900B1E488 /* Main.storyboard in Resources */,
 			);
@@ -162,18 +206,102 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1835BDC426BA46D80033E885 /* Crashlitics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlitics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		1859EC5626B9608100B6A061 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		62A818B335D83C78209406A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Race/Pods-Race-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Race/Pods-Race-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Race/Pods-Race-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8F4328CCCEE7124E3F4546F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Race-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		188BCE612642A51900B1E488 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18939E5026BBDB6B0025E11D /* GameViewController+GyroMotion.swift in Sources */,
 				188BCE6D2642A51900B1E488 /* ViewController.swift in Sources */,
+				18939E5426BC11520025E11D /* UserDefaults+Keys.swift in Sources */,
 				188BCE872642CE6D00B1E488 /* ViewControllerFactory.swift in Sources */,
-				189824BE266F1E3F00200515 /* GameSettings.swift in Sources */,
+				189824BE266F1E3F00200515 /* ScoresList.swift in Sources */,
 				188BCE812642C61900B1E488 /* ScoresViewController.swift in Sources */,
 				188BCE692642A51900B1E488 /* AppDelegate.swift in Sources */,
 				18EAD66B265F65A100ABE5BC /* UIFonts+CustomFonts.swift in Sources */,
 				188BCE6B2642A51900B1E488 /* SceneDelegate.swift in Sources */,
+				18939E5226BC10360025E11D /* UserDefaultsKeys.swift in Sources */,
+				18939E4E26BBD9C20025E11D /* GameViewController+SetupViews.swift in Sources */,
 				188BCE842642C92000B1E488 /* GameViewController.swift in Sources */,
 				188BCE7E2642C60A00B1E488 /* SettingsViewController.swift in Sources */,
 			);
@@ -319,18 +447,23 @@
 		};
 		188BCE7A2642A51D00B1E488 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 697B49F9F01E6EE70AA98359 /* Pods-Race.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = GNQ5U977A2;
 				INFOPLIST_FILE = Race/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Lesson21-DZ-Race";
+				PRODUCT_BUNDLE_IDENTIFIER = Oleyarr.Race;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -338,18 +471,22 @@
 		};
 		188BCE7B2642A51D00B1E488 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56F156BBD1ED53447FF01D4E /* Pods-Race.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GNQ5U977A2;
 				INFOPLIST_FILE = Race/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Lesson21-DZ-Race";
+				PRODUCT_BUNDLE_IDENTIFIER = Oleyarr.Race;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

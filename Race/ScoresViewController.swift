@@ -1,58 +1,72 @@
 import UIKit
 
 class ScoresViewController: UIViewController {
-    
-    @IBOutlet weak var listOfScoresLabel: UILabel!
-    @IBOutlet weak var totalScoresLabel: UILabel!
+
     @IBOutlet weak var scoresTableView: UITableView!
-    
+
     var userDefaults = UserDefaults.standard
-    var gameSettingsArray = [GameSettings()]
-    
+    var scoresArray: [ScoresList] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Scores"
-        totalScoresLabel.text = "Total Scores: \(userDefaults.value(forKey: "Total scores") as? Int ?? 0)"
-        gameSettingsArray = decodeSettings()
+        scoresArray = restoreScores()
         scoresTableView.dataSource = self
     }
-    
+
     @IBAction func clearScoresButtonPressed(_ sender: Any) {
-        userDefaults.setValue("0", forKey: "Total scores")
-        userDefaults.setValue("", forKey: "list of session scores")
-        totalScoresLabel.text = "Total Scores: 0"
-        listOfScoresLabel.text = ""
-        userDefaults.setValue([], forKey: "game_settings")
+        scoresArray.removeAll()
+        userDefaults.setValue(scoresArray, forKey: .scores)
+        scoresTableView.reloadData()
     }
-    
-    func decodeSettings() -> [GameSettings] {
-        if let extractGameSettingsAsData = userDefaults.value(forKey: "game_settings") as? Data {
+
+    func restoreScores() -> [ScoresList] {
+        if let extractScoresData = userDefaults.value(forKey: .scores) as? Data {
             let decoder = JSONDecoder()
             do {
-                let settingsArray = try decoder.decode([GameSettings].self, from: extractGameSettingsAsData)
-                gameSettingsArray = settingsArray
-            }
-            catch {
+                let data = try decoder.decode([ScoresList].self, from: extractScoresData)
+                scoresArray = data
+            } catch {
                 print(error.localizedDescription)
             }
         }
-        return gameSettingsArray
+        return scoresArray
+    }
+
+    func saveScores(sessionScores: Int) {
+        scoresArray = restoreScores()
+        let driverName = userDefaults.value(forKey: .driverName) as? String ?? "noname"
+        let carColor = userDefaults.value(forKey: .carColor) as? String ?? "red"
+        let newScores = ScoresList(time: Date(),
+                   driverName: driverName,
+                   carColor: carColor,
+                   scores: sessionScores)
+        scoresArray.append(newScores)
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(scoresArray)
+            userDefaults.setValue(data, forKey: .scores)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
 
 extension ScoresViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameSettingsArray.count
+        return scoresArray.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let sortedScoresArray = scoresArray.sorted(by: { $0.scores > $1.scores })
         let cell = UITableViewCell()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd hh:mm"
-        let time = formatter.string(from: gameSettingsArray[indexPath.row].time)
-        let scores = String(gameSettingsArray[indexPath.row].scores)
-        let extractText =  "\(time):     \(scores)\n"
+        let time = formatter.string(from: sortedScoresArray[indexPath.row].time)
+        let scores = String(sortedScoresArray[indexPath.row].scores)
+        let driverName = String(sortedScoresArray[indexPath.row].driverName)
+        let extractText =  "\(time):    \(driverName)    \(scores)\n"
         cell.textLabel?.text = extractText
         return cell
     }
