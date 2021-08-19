@@ -6,6 +6,7 @@ target 'Race' do
   use_frameworks!
   pod 'SwiftLint'
   pod 'Firebase/Crashlytics'
+  pod 'RealmSwift', '~>10' 
   # Pods for Race
 
 end
