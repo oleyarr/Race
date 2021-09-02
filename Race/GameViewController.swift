@@ -29,6 +29,7 @@ class GameViewController: UIViewController {
 
     private var userDefaults = UserDefaults.standard
     let gyroMotionManager = CMMotionManager()
+    let settings = SettingsViewController()
 
     override func viewWillAppear(_ animated: Bool) {
         createAndMoveFirstLongLane()
@@ -38,11 +39,16 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         title = "Тише едешь - дальше будешь"
 
+        settings.restoreGyroControlSettings()
+        if settings.isUseGyroControl {
+            startGyroMotionManager()
+        }
+
         initialButtonSettings()
         initialGreenViewSettings()
         sessionScores = 0
         liveUpdateTextLabelScores()
-        startGyroMotionManager()
+
         let settingsViewController = SettingsViewController()
         carImageView.image = settingsViewController.restoreCarColorSettings()
 
@@ -64,31 +70,35 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func buttonLeftPressed(_ sender: Any) {
-        carImageView.frame.origin.x -= 20
-        saveCarFrame = carImageView.frame
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear) {
-            self.carImageView.transform = self.carImageView.transform.rotated(by: -0.3)
-        } completion: { (_) in
-            self.carImageView.transform = self.carImageView.transform.rotated(by: 0.3)
-            self.carImageView.frame = self.saveCarFrame
-            if self.carImageView.frame.intersects(self.greenViewLeft.frame) {
-                self.isCrash = true
-                self.gameOver()
+        if !settings.isUseGyroControl {
+            carImageView.frame.origin.x -= 20
+            saveCarFrame = carImageView.frame
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear) {
+                self.carImageView.transform = self.carImageView.transform.rotated(by: -0.3)
+            } completion: { (_) in
+                self.carImageView.transform = self.carImageView.transform.rotated(by: 0.3)
+                self.carImageView.frame = self.saveCarFrame
+                if self.carImageView.frame.intersects(self.greenViewLeft.frame) {
+                    self.isCrash = true
+                    self.gameOver()
+                }
             }
         }
     }
 
     @IBAction func buttonRightPressed(_ sender: Any) {
-        carImageView.frame.origin.x += 20
-        saveCarFrame = carImageView.frame
-        UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear) {
-            self.carImageView.transform = self.carImageView.transform.rotated(by: 0.3)
-        } completion: { (_) in
-            self.carImageView.transform = self.carImageView.transform.rotated(by: -0.3)
-            self.carImageView.frame = self.saveCarFrame
-            if self.carImageView.frame.intersects(self.greenViewRight.frame) {
-                self.isCrash = true
-                self.gameOver()
+        if !settings.isUseGyroControl {
+            carImageView.frame.origin.x += 20
+            saveCarFrame = carImageView.frame
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear) {
+                self.carImageView.transform = self.carImageView.transform.rotated(by: 0.3)
+            } completion: { (_) in
+                self.carImageView.transform = self.carImageView.transform.rotated(by: -0.3)
+                self.carImageView.frame = self.saveCarFrame
+                if self.carImageView.frame.intersects(self.greenViewRight.frame) {
+                    self.isCrash = true
+                    self.gameOver()
+                }
             }
         }
     }
@@ -128,7 +138,7 @@ class GameViewController: UIViewController {
     }
 
     func animateOneCar(_ car: UIView) {
-        let newY = car.frame.origin.y + animateLaneStep * CGFloat.random(in: 1.2...1.5)
+        let newY = car.frame.origin.y + animateLaneStep * CGFloat.random(in: 1.3...1.5)
         if newY > gamePlaceView.frame.maxY {
             countCarsPassedBy += 1
             sessionScores += scoreStep
@@ -153,7 +163,9 @@ class GameViewController: UIViewController {
 
     func gameOver() {
         isGameOver = true
-        stopGyroMotionManager()
+        if settings.isUseGyroControl {
+            stopGyroMotionManager()
+        }
         liveUpdateTextLabelScores()
         let scoresViewController = ScoresViewController()
         scoresViewController.saveScores(sessionScores: sessionScores)

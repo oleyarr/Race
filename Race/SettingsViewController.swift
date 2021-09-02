@@ -6,13 +6,16 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var blackButton: UIButton!
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var driverNameTextField: UITextField!
+    @IBOutlet weak var useGyroControl: UISwitch!
 
     private var userDefaults = UserDefaults.standard
+    var isUseGyroControl: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Settings"
 
+        driverNameTextField.delegate = self
         if userDefaults.value(forKey: .driverName) == nil {
             driverNameTextField.text = ""
         } else {
@@ -29,7 +32,8 @@ class SettingsViewController: UIViewController {
         let choosedCarColor = userDefaults.value(forKey: .carColor) as? String ?? "red"
         selectCarColor(color: choosedCarColor)
 
-        driverNameTextField.delegate = self
+        restoreGyroControlSettings()
+        useGyroControl.isOn = isUseGyroControl
     }
 
     @IBAction func redButtonPressed(_ sender: Any) {
@@ -42,6 +46,11 @@ class SettingsViewController: UIViewController {
 
     @IBAction func blackButtonPressed(_ sender: Any) {
         selectCarColor(color: "black")    }
+
+    @IBAction func useGyroControlButton(_ sender: Any) {
+        isUseGyroControl = useGyroControl.isOn
+        userDefaults.setValue(isUseGyroControl, forKey: "isUseGyroControl")
+    }
 
     func selectCarColor(color: String) {
         switch color {
@@ -90,6 +99,15 @@ class SettingsViewController: UIViewController {
             return UIImage(named: "car_icon_yellow")
         default:
             return UIImage(named: "car_icon_red")
+        }
+    }
+
+    func restoreGyroControlSettings() {
+        if let control = userDefaults.value(forKey: "isUseGyroControl") as? Int {
+            switch control {
+            case 0: isUseGyroControl = false
+            default: isUseGyroControl = true
+            }
         }
     }
 }

@@ -10,10 +10,27 @@ import UIKit
 extension GameViewController {
 
     func initialButtonSettings() {
-        buttonLeft.layer.borderColor = UIColor.green.cgColor
-        buttonLeft.layer.borderWidth = 0.5
-        buttonRight.layer.borderColor = UIColor.green.cgColor
-        buttonRight.layer.borderWidth = 0.5
+        if settings.isUseGyroControl {
+            buttonLeft.setTitleColor(.clear, for: .normal)
+            buttonRight.setTitleColor(.clear, for: .normal)
+            buttonLeft.isEnabled = false
+            buttonRight.isEnabled = false
+            view.willRemoveSubview(buttonLeft)
+            view.willRemoveSubview(buttonRight)
+        } else {
+            buttonLeft.setTitleColor(.clear, for: .normal)
+            buttonRight.setTitleColor(.clear, for: .normal)
+            buttonLeft.isEnabled = true
+            buttonRight.isEnabled = true
+            buttonLeft.setTitleColor(.green, for: .normal)
+            buttonRight.setTitleColor(.green, for: .normal)
+            buttonLeft.layer.borderColor = UIColor.green.cgColor
+            buttonLeft.layer.borderWidth = 0.5
+            buttonRight.layer.borderColor = UIColor.green.cgColor
+            buttonRight.layer.borderWidth = 0.5
+            view.addSubview(buttonLeft)
+            view.addSubview(buttonRight)
+        }
         gamePlaceView.frame = view.frame
         gamePlaceView.frame.size.height = view.frame.maxY + 20
         gamePlaceView.backgroundColor = .gray
@@ -87,7 +104,7 @@ extension GameViewController {
         } completion: { (_) in
         }
     }
-    
+
     func initialOncomingCar(_ car: UIImageView) {
         car.frame.size.width = gamePlaceView.frame.width / 11
         car.frame.size.height = gamePlaceView.frame.height / 11

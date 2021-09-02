@@ -196,6 +196,20 @@
                                     <constraint firstItem="arw-ZN-ajy" firstAttribute="height" secondItem="aNs-S8-lfZ" secondAttribute="height" id="ys9-bt-3kB"/>
                                 </constraints>
                             </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sgR-zh-Oih">
+                                <rect key="frame" x="125" y="506" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="useGyroControlButton:" destination="zF2-Ii-13L" eventType="valueChanged" id="thN-ze-GHK"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="use gyro control" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgI-rU-xjA">
+                                <rect key="frame" x="198" y="511" width="124" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MMm-QB-vPC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -212,6 +226,7 @@
                         <outlet property="blackButton" destination="aNs-S8-lfZ" id="OFx-Gx-eS3"/>
                         <outlet property="driverNameTextField" destination="DOK-1m-wdA" id="99R-rv-qE1"/>
                         <outlet property="redButton" destination="arw-ZN-ajy" id="vrz-gz-3lc"/>
+                        <outlet property="useGyroControl" destination="sgR-zh-Oih" id="Tab-lm-ej8"/>
                         <outlet property="yellowButton" destination="bgt-2M-ohG" id="haK-pm-P7w"/>
                     </connections>
                 </viewController>
