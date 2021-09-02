@@ -7,6 +7,9 @@ target 'Race' do
   pod 'SwiftLint'
   pod 'Firebase/Crashlytics'
   pod 'RealmSwift', '~>10' 
+  # Pods for RxSwift
+  pod 'RxSwift', '6.2.0'
+  pod 'RxCocoa', '6.2.0'
   # Pods for Race
 
 end
