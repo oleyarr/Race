@@ -28,8 +28,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonScoresPressed(_ sender: Any) {
-        let scoresViewController = ViewControllerFactory.shared.createScoresViewController()
-        navigationController?.pushViewController(scoresViewController, animated: true)
+//        let scoresViewController = ViewControllerFactory.shared.createScoresViewController()
+//        navigationController?.pushViewController(scoresViewController, animated: true)
+        let rxScoresViewController = ViewControllerFactory.shared.createRxScoresViewController()
+        navigationController?.pushViewController(rxScoresViewController, animated: true)
     }
 
     func colorTextStart() {

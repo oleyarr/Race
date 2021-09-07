@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1802262826BA6459009A388A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1802262726BA6458009A388A /* GoogleService-Info.plist */; };
+		180F7E2126E1EADB006367FF /* RxScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180F7E2026E1EADB006367FF /* RxScoresTableViewCell.swift */; };
+		182EAFB926E11C01008F1064 /* RxScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EAFB826E11C01008F1064 /* RxScoresViewController.swift */; };
+		182EAFBB26E15150008F1064 /* RxScoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EAFBA26E15150008F1064 /* RxScoresViewModel.swift */; };
+		182EAFBE26E1D02A008F1064 /* RxScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182EAFBD26E1D02A008F1064 /* RxScores.swift */; };
 		18493FEB26D25086007CA380 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18493FEA26D25086007CA380 /* RealmManager.swift */; };
 		18493FED26D2B0C4007CA380 /* GameScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18493FEC26D2B0C4007CA380 /* GameScores.swift */; };
 		188BCE692642A51900B1E488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCE682642A51900B1E488 /* AppDelegate.swift */; };
@@ -32,6 +36,10 @@
 
 /* Begin PBXFileReference section */
 		1802262726BA6458009A388A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		180F7E2026E1EADB006367FF /* RxScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxScoresTableViewCell.swift; sourceTree = "<group>"; };
+		182EAFB826E11C01008F1064 /* RxScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxScoresViewController.swift; sourceTree = "<group>"; };
+		182EAFBA26E15150008F1064 /* RxScoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxScoresViewModel.swift; sourceTree = "<group>"; };
+		182EAFBD26E1D02A008F1064 /* RxScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxScores.swift; sourceTree = "<group>"; };
 		18493FEA26D25086007CA380 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		18493FEC26D2B0C4007CA380 /* GameScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScores.swift; sourceTree = "<group>"; };
 		188BCE652642A51900B1E488 /* Race.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Race.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +78,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182EAFBC26E1CFF8008F1064 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				182EAFB826E11C01008F1064 /* RxScoresViewController.swift */,
+				180F7E2026E1EADB006367FF /* RxScoresTableViewCell.swift */,
+				182EAFBA26E15150008F1064 /* RxScoresViewModel.swift */,
+				182EAFBD26E1D02A008F1064 /* RxScores.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
 		188BCE5C2642A51900B1E488 = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +125,9 @@
 				18939E4D26BBD9C20025E11D /* GameViewController+SetupViews.swift */,
 				18939E4F26BBDB6B0025E11D /* GameViewController+GyroMotion.swift */,
 				188BCE862642CE6D00B1E488 /* ViewControllerFactory.swift */,
-				188BCE6E2642A51900B1E488 /* Main.storyboard */,
 				189824BD266F1E3F00200515 /* ScoresList.swift */,
+				188BCE6E2642A51900B1E488 /* Main.storyboard */,
+				182EAFBC26E1CFF8008F1064 /* Rx */,
 				188BCE712642A51D00B1E488 /* Assets.xcassets */,
 				188BCE732642A51D00B1E488 /* LaunchScreen.storyboard */,
 				1802262726BA6458009A388A /* GoogleService-Info.plist */,
@@ -299,6 +319,7 @@
 			files = (
 				18939E5026BBDB6B0025E11D /* GameViewController+GyroMotion.swift in Sources */,
 				188BCE6D2642A51900B1E488 /* ViewController.swift in Sources */,
+				182EAFBE26E1D02A008F1064 /* RxScores.swift in Sources */,
 				18939E5426BC11520025E11D /* UserDefaults+Keys.swift in Sources */,
 				188BCE872642CE6D00B1E488 /* ViewControllerFactory.swift in Sources */,
 				189824BE266F1E3F00200515 /* ScoresList.swift in Sources */,
@@ -308,10 +329,13 @@
 				188BCE692642A51900B1E488 /* AppDelegate.swift in Sources */,
 				18EAD66B265F65A100ABE5BC /* UIFonts+CustomFonts.swift in Sources */,
 				188BCE6B2642A51900B1E488 /* SceneDelegate.swift in Sources */,
+				180F7E2126E1EADB006367FF /* RxScoresTableViewCell.swift in Sources */,
 				18939E5226BC10360025E11D /* UserDefaultsKeys.swift in Sources */,
 				18939E4E26BBD9C20025E11D /* GameViewController+SetupViews.swift in Sources */,
 				188BCE842642C92000B1E488 /* GameViewController.swift in Sources */,
 				188BCE7E2642C60A00B1E488 /* SettingsViewController.swift in Sources */,
+				182EAFBB26E15150008F1064 /* RxScoresViewModel.swift in Sources */,
+				182EAFB926E11C01008F1064 /* RxScoresViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

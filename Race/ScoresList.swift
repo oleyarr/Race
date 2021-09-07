@@ -10,12 +10,13 @@ class ScoresList: Codable {
     var time: Date
     var driverName: String
     var carColor: String
-    var scores: Int
+    var score: Int
 
-    init(time: Date, driverName: String, carColor: String, scores: Int) {
+//    init(time: Date, driverName: String, carColor: String, scores: Int) {
+    init(time: Date = Date(), driverName: String = "unknown", carColor: String = "black", scores: Int = 0) {
         self.time = time
         self.driverName = driverName
         self.carColor = carColor
-        self.scores = scores
+        self.score = scores
     }
 }

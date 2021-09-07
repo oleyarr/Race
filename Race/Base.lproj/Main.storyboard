@@ -278,6 +278,73 @@
             </objects>
             <point key="canvasLocation" x="2028.985507246377" y="132.58928571428572"/>
         </scene>
+        <!--Rx Scores View Controller-->
+        <scene sceneID="JF8-8e-eZj">
+            <objects>
+                <viewController storyboardIdentifier="RxScoresViewController" id="MyK-Rz-knj" customClass="RxScoresViewController" customModule="Race" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wSG-vb-1Po">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kjL-1D-iSv">
+                                <rect key="frame" x="22" y="66" width="370" height="708"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RxScoresTableViewCell" id="rEs-UC-YOl" customClass="RxScoresTableViewCell" customModule="Race" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="370" height="43"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rEs-UC-YOl" id="FBB-dR-kZq">
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mY2-ZC-VeY">
+                                                    <rect key="frame" x="20" y="11" width="330" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mY2-ZC-VeY" firstAttribute="leading" secondItem="FBB-dR-kZq" secondAttribute="leadingMargin" id="GBc-UB-Ndr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mY2-ZC-VeY" secondAttribute="bottom" id="i08-UG-FiH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mY2-ZC-VeY" secondAttribute="trailing" id="oAm-1b-AtE"/>
+                                                <constraint firstItem="mY2-ZC-VeY" firstAttribute="top" secondItem="FBB-dR-kZq" secondAttribute="topMargin" id="v0S-2S-zOj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="rxScoresLabel" destination="mY2-ZC-VeY" id="SrL-XC-9EQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wig-tU-kDJ">
+                                <rect key="frame" x="22" y="796" width="370" height="44"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <state key="normal" title="Clear Scores"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VcT-68-NXa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VcT-68-NXa" firstAttribute="trailing" secondItem="kjL-1D-iSv" secondAttribute="trailing" constant="22" id="2iW-y7-Fxj"/>
+                            <constraint firstItem="wig-tU-kDJ" firstAttribute="leading" secondItem="VcT-68-NXa" secondAttribute="leading" constant="22" id="6Fl-Cy-wOW"/>
+                            <constraint firstItem="VcT-68-NXa" firstAttribute="bottom" secondItem="kjL-1D-iSv" secondAttribute="bottom" constant="88" id="B7e-Au-lmc"/>
+                            <constraint firstItem="VcT-68-NXa" firstAttribute="bottom" secondItem="wig-tU-kDJ" secondAttribute="bottom" constant="22" id="L80-cI-bRc"/>
+                            <constraint firstItem="wig-tU-kDJ" firstAttribute="top" secondItem="kjL-1D-iSv" secondAttribute="bottom" constant="22" id="Mcd-99-iRh"/>
+                            <constraint firstItem="VcT-68-NXa" firstAttribute="trailing" secondItem="wig-tU-kDJ" secondAttribute="trailing" constant="22" id="g9E-t1-I97"/>
+                            <constraint firstItem="kjL-1D-iSv" firstAttribute="leading" secondItem="VcT-68-NXa" secondAttribute="leading" constant="22" id="iqE-hY-gaH"/>
+                            <constraint firstItem="kjL-1D-iSv" firstAttribute="top" secondItem="VcT-68-NXa" secondAttribute="top" constant="22" id="jls-N4-bfo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clearScoresButton" destination="wig-tU-kDJ" id="ssc-jR-TqV"/>
+                        <outlet property="scoresTableView" destination="kjL-1D-iSv" id="j97-F1-7p6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtl-jX-V6R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708.6956521739135" y="132.58928571428572"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="tB0-Zo-nQF">
             <objects>

@@ -70,34 +70,38 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func buttonLeftPressed(_ sender: Any) {
-        if !settings.isUseGyroControl {
-            carImageView.frame.origin.x -= 20
-            saveCarFrame = carImageView.frame
-            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear) {
-                self.carImageView.transform = self.carImageView.transform.rotated(by: -0.3)
-            } completion: { (_) in
-                self.carImageView.transform = self.carImageView.transform.rotated(by: 0.3)
-                self.carImageView.frame = self.saveCarFrame
-                if self.carImageView.frame.intersects(self.greenViewLeft.frame) {
-                    self.isCrash = true
-                    self.gameOver()
+        if !isGameOver {
+            if !settings.isUseGyroControl {
+                carImageView.frame.origin.x -= 20
+                saveCarFrame = carImageView.frame
+                UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear) {
+                    self.carImageView.transform = self.carImageView.transform.rotated(by: -0.3)
+                } completion: { (_) in
+                    self.carImageView.transform = self.carImageView.transform.rotated(by: 0.3)
+                    self.carImageView.frame = self.saveCarFrame
+                    if self.carImageView.frame.intersects(self.greenViewLeft.frame) {
+                        self.isCrash = true
+                        self.gameOver()
+                    }
                 }
             }
         }
     }
 
     @IBAction func buttonRightPressed(_ sender: Any) {
-        if !settings.isUseGyroControl {
-            carImageView.frame.origin.x += 20
-            saveCarFrame = carImageView.frame
-            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear) {
-                self.carImageView.transform = self.carImageView.transform.rotated(by: 0.3)
-            } completion: { (_) in
-                self.carImageView.transform = self.carImageView.transform.rotated(by: -0.3)
-                self.carImageView.frame = self.saveCarFrame
-                if self.carImageView.frame.intersects(self.greenViewRight.frame) {
-                    self.isCrash = true
-                    self.gameOver()
+        if !isGameOver {
+            if !settings.isUseGyroControl {
+                carImageView.frame.origin.x += 20
+                saveCarFrame = carImageView.frame
+                UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear) {
+                    self.carImageView.transform = self.carImageView.transform.rotated(by: 0.3)
+                } completion: { (_) in
+                    self.carImageView.transform = self.carImageView.transform.rotated(by: -0.3)
+                    self.carImageView.frame = self.saveCarFrame
+                    if self.carImageView.frame.intersects(self.greenViewRight.frame) {
+                        self.isCrash = true
+                        self.gameOver()
+                    }
                 }
             }
         }
@@ -167,8 +171,11 @@ class GameViewController: UIViewController {
             stopGyroMotionManager()
         }
         liveUpdateTextLabelScores()
-        let scoresViewController = ScoresViewController()
-        scoresViewController.saveScores(sessionScores: sessionScores)
+//        let scoresViewController = ScoresViewController()
+//        scoresViewController.saveScores(sessionScores: sessionScores)
+        let rxScoresViewController = RxScoresViewController()
+        rxScoresViewController.saveScores(sessionScores: sessionScores)
+
         initGameOverLabel()
     }
 

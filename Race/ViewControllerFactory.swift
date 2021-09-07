@@ -23,4 +23,9 @@ class ViewControllerFactory {
     func createScoresViewController() -> ScoresViewController {
          return storyboard.instantiateViewController(identifier: "ScoresViewController") // as ScoresViewController
     }
+
+    func createRxScoresViewController() -> RxScoresViewController {
+         return storyboard.instantiateViewController(identifier: "RxScoresViewController") // as ScoresViewController
+    }
+
 }

@@ -1,2 +1,5 @@
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Pods/RealmSwift
+  - Pods/RxSwift
+  - Pods/RxRelay
+  - Pods/RxCocoa
